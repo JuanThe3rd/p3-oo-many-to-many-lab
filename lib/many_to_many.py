@@ -53,7 +53,7 @@ class Contract:
         
         Contract.all.append(self)
 
-    def contracts_by_date():
+    def contracts_by_date():        
         sorted_dates = sorted([contract.date for contract in Contract.all])
         sorted_contracts = []
 
@@ -63,3 +63,14 @@ class Contract:
                     sorted_contracts.append(contract)
 
         return sorted_contracts
+
+
+# It seems as if the unit tests and instructions ask for 2 different things
+# down here is the solution for Contract.contracts_by_date() per the Canvas 
+# instructions.
+
+'''
+@classmethod
+    def contracts_by_date(cls, date):        
+        return [contract for contract in cls.all if contract.date == date]
+'''
